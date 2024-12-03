@@ -3,21 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba de Página Web</title>
+    <title>Página Profesional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+        }
+        nav a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #003f8c;
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #eaf4ff;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1 style="text-align: center; color: darkgreen;">¡Hola, mundo!</h1>
-    <p style="text-align: center; font-size: 1.2em;">Esta es una prueba de mi página web con GitHub Pages.</p>
-
-    <h2>Próximamente...</h2>
-    <ul>
-        <li>Video del proyecto</li>
-        <li>Base de datos</li>
-        <li>Documentación</li>
-    </ul>
-
-    <footer style="margin-top: 20px; text-align: center;">
-        <p>&copy; 2024 [Tu Nombre]. Esta es una prueba inicial.</p>
+    <header>
+        <h1>Mi Página Profesional</h1>
+    </header>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <section class="hero">
+        <h2>¡Bienvenido a nuestra página!</h2>
+        <p>Construimos proyectos innovadores para el futuro.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Imagen destacada">
+    </section>
+    <section class="content" id="nosotros">
+        <h3>¿Quiénes somos?</h3>
+        <p>Somos un equipo comprometido con el desarrollo de soluciones web.</p>
+    </section>
+    <section class="content" id="servicios">
+        <h3>Nuestros servicios</h3>
+        <p>Desarrollo web, diseño gráfico y consultoría tecnológica.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Mi Equipo. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
