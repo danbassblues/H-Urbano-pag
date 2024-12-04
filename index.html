@@ -17,16 +17,19 @@
             color: white;
             padding: 10px 20px;
             text-align: center;
+            animation: slideDown 1.5s ease-out;
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #005bb5;
+            animation: fadeIn 2s ease-out;
         }
         nav a {
             color: white;
             padding: 10px 15px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
         nav a:hover {
             background-color: #003f8c;
@@ -35,10 +38,12 @@
             text-align: center;
             padding: 50px 20px;
             background-color: #eaf4ff;
+            animation: fadeInUp 2.5s ease-out;
         }
         .hero img {
             max-width: 100%;
             height: auto;
+            animation: zoomIn 3s ease;
         }
         .content {
             padding: 20px;
@@ -53,6 +58,46 @@
             width: 100%;
             bottom: 0;
         }
+
+        /* Animaciones */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -61,16 +106,15 @@
     </header>
     <nav>
         <a href="quienes-somos.html" style="display: inline-block; margin-top: 20px;">Quiénes Somos</a>
-
     </nav>
     <section class="hero">
         <h2>¡Bienvenido a nuestra página!</h2>
         <p>Construimos proyectos innovadores para el futuro.</p>
         <img src="logo_5a.png" alt="Imagen destacada">
     </section>
-   
     <footer>
         <p>&copy; 2024 Danny, Alan & Daniel. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
+
