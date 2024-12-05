@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+        }
+        section {
+            margin: 20px;
+        }
+        .file-upload {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px dashed #005bb5;
+            border-radius: 10px;
+            background-color: #eaf4ff;
+            width: 60%;
+            max-width: 400px;
+        }
+        .file-upload input[type="file"] {
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daniel</h1>
+    </header>
+    <section>
+        <h2>Sobre mí</h2>
+        <p>Aquí puedes incluir una descripción de tu participación en el proyecto.</p>
+    </section>
+    <section class="file-upload">
+        <h3>Subir Archivos</h3>
+        <p>Puedes cargar archivos CSV o Excel aquí:</p>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv, .xls, .xlsx">
+            <br><br>
+            <button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #005bb5; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Subir Archivo
+            </button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Daniel. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
