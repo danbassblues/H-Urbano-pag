@@ -56,22 +56,22 @@
         }
 
         .button-container button {
-            background: linear-gradient(45deg, #aaa, #aaa);
-            border: none;
+            background: rgba(255, 255, 255, 0.1); /* Transparente */
+            border: 2px solid #ffffff; /* Borde blanco */
             border-radius: 25px;
             padding: 15px 30px;
             font-size: 1.2rem;
             font-weight: bold;
             color: white;
-            box-shadow: 0 8px 15px rgba(50, 50, 50, .5);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
 
         .button-container button:hover {
+            background: rgba(255, 255, 255, 0.3); /* Más visible al pasar el cursor */
             transform: translateY(-5px) scale(1.1);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, #ff8c42, #ff6f61);
         }
 
         .button-container button:active {
@@ -93,4 +93,3 @@
     </div>
 </body>
 </html>
-
