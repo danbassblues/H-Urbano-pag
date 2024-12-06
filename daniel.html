@@ -3,68 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel</title>
+    <title>Daniel Cureño</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #00203f, #adefd1);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
             text-align: center;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
         }
-        header {
-            background-color: #0073e6;
-            color: white;
-            padding: 20px;
-        }
-        section {
-            margin: 20px;
-        }
-        .file-upload {
-            margin: 20px auto;
-            padding: 20px;
-            border: 2px dashed #005bb5;
-            border-radius: 10px;
-            background-color: #eaf4ff;
-            width: 60%;
-            max-width: 400px;
-        }
-        .file-upload input[type="file"] {
-            margin-top: 10px;
-        }
-        footer {
-            background-color: #0073e6;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            bottom: 0;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.5);
+            animation: zoomInOut 10s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .button-container button {
+            background: linear-gradient(45deg, #ff6f61, #ff8c42);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button-container button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #ff8c42, #ff6f61);
+        }
+
+        .button-container button:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Daniel</h1>
-    </header>
-    <section>
-        <h2>Sobre mí</h2>
-        <p>Aquí puedes incluir una descripción de tu participación en el proyecto.</p>
-    </section>
-    <section class="file-upload">
-        <h3>Subir Archivos</h3>
-        <p>Puedes cargar archivos CSV o Excel aquí:</p>
-        <form action="#" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".csv, .xls, .xlsx">
-            <br><br>
-            <button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #005bb5; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                Subir Archivo
-            </button>
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2024 Daniel. Todos los derechos reservados.</p>
-    </footer>
+    <div class="container">
+        <img src="daniel_background.jpg" alt="Fondo de Daniel" class="background-image">
+        <h1>Daniel Cureño</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='mi_experiencia.html';">Mi Experiencia</button>
+            <button onclick="window.location.href='ap_calculo_integral.html';">Aportación en Cálculo Integral</button>
+            <button onclick="window.location.href='ap_pensamiento_complejo.html';">Aportación en Pensamiento Complejo</button>
+            <button onclick="window.location.href='huerto_urbano.html';">Base de Datos: Huerto Urbano</button>
+            <button onclick="window.location.href='mi_conclusion.html';">Mi Conclusión</button>
+        </div>
+    </div>
 </body>
 </html>
+
