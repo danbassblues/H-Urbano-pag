@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensamiento Crítico</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            display: grid;
+            grid-template-areas: 
+                "title image"
+                "subtitle image"
+                "content content";
+            grid-template-columns: 3fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .title {
+            grid-area: title;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            grid-area: subtitle;
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        .image {
+            grid-area: image;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .image img {
+            width: 5cm;
+            height: 7cm;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            grid-area: content;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Pensamiento Crítico</div>
+        <div class="subtitle">Explorando la importancia de analizar, evaluar y reflexionar en nuestra sociedad actual.</div>
+        <div class="image">
+            <img src="https://via.placeholder.com/150" alt="Imagen ilustrativa">
+        </div>
+        <div class="content">
+            <p>
+                El pensamiento crítico es una habilidad esencial en el mundo moderno. Nos permite no solo consumir información, 
+                sino también cuestionarla, contextualizarla y utilizarla de manera efectiva para tomar decisiones informadas. 
+                En esta edición, profundizaremos en estrategias prácticas y ejemplos relevantes.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
