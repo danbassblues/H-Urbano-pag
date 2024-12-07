@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de una Base de datos Huerto Urbano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+
+        .file-upload {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .file-upload label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .file-upload label:hover {
+            background-color: #2980b9;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+        }
+
+        .last-updated {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #555;
+            text-align: right;
+        }
+
+        .editable-table {
+            margin: 30px auto;
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+        }
+
+        .editable-table th, .editable-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .editable-table th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .editable-table td {
+            background-color: #f9f9f9;
+        }
+
+        .editable-table td:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Simulación de una Base de datos Huerto Urbano</h1>
+            <p>Interactúa con los datos y visualiza el diseño de la base de datos</p>
+        </div>
+
+        <!-- Enlace para descargar el archivo Excel -->
+        <div class="file-upload">
+            <label for="fileInput">Subir archivo Excel</label>
+            <a href="https://github.com/danbassblues/H-Urbano-pag/blob/main/P_P_H_URBANO.xlsx" target="_blank" class="download-link">
+                Descargar el archivo Excel: P_P_H_URBANO.xlsx
+            </a>
+        </div>
+
+        <!-- Tabla editable -->
+        <table class="editable-table">
+            <thead>
+                <tr>
+                    <th>Columna 1</th>
+                    <th>Columna 2</th>
+                    <th>Columna 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td contenteditable="true">Dato 1</td>
+                    <td contenteditable="true">Dato 2</td>
+                    <td contenteditable="true">Dato 3</td>
+                </tr>
+                <tr>
+                    <td contenteditable="true">Dato 4</td>
+                    <td contenteditable="true">Dato 5</td>
+                    <td contenteditable="true">Dato 6</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Imagen del diagrama de base de datos -->
+        <div class="image-container">
+            <img src="https://github.com/danbassblues/H-Urbano-pag/blob/main/bdhu.jpg" alt="Diagrama de Base de Datos">
+        </div>
+
+        <!-- Última actualización -->
+        <div class="last-updated">Última actualización: 08/diciembre/2024</div>
+    </div>
+
+    <script>
+        // Manejo de carga de archivos
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                alert(`Archivo cargado: ${file.name}`);
+                // Aquí puedes añadir lógica para procesar el archivo Excel
+            }
+        });
+    </script>
+</body>
+</html>
