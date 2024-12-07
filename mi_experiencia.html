@@ -5,19 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes Somos</title>
     <style>
-        /* Estilo para el fondo con imagen desvanecida */
+        /* Estilo general */
         body {
             margin: 0;
-            font-family: 'Georgia', serif; /* Fuente predeterminada */
-            background-image: url('fondo_ex.jpg'); /* Cambia por el nombre de tu imagen */
-            background-size: cover; /* La imagen ocupa toda la pantalla */
-            background-position: center; /* Centra la imagen */
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-            color: white; /* Color del texto */
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298); /* Gradiente de fondo */
+            color: #fff;
         }
 
-        /* Estilo para aplicar un efecto desvanecido */
+        /* Efecto de fondo desvanecido */
         body::before {
             content: "";
             position: fixed;
@@ -25,47 +21,106 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
-            z-index: -1; /* Coloca detrás del contenido */
+            background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            z-index: -1;
         }
 
-        /* Estilo para el encabezado */
-        h1 {
+        /* Estilo del contenedor principal */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Estilo de cada columna */
+        .column {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Espacios para las imágenes */
+        .column img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Títulos y texto */
+        .column h2 {
+            font-size: 24px;
+            margin: 20px;
             text-align: center;
-            font-family: 'Arial', sans-serif;
-            font-size: 36px;
-            margin-top: 20px;
+            text-transform: uppercase;
+            color: #f39c12;
         }
 
-        /* Estilo para el párrafo */
-        p {
+        .column p {
+            font-size: 18px;
+            line-height: 1.8;
             text-align: justify;
             margin: 20px;
-            font-size: 18px;
-            line-height: 1.6;
         }
 
-        /* Estilo para el enlace */
-        a {
+        /* Efectos en los botones */
+        .button {
             display: block;
-            text-align: center;
-            margin-top: 20px;
-            font-family: 'Verdana', sans-serif;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
             font-size: 16px;
-            color: #2980b9;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .button:hover {
+            background: #3498db;
+        }
+
+        /* Estilo del encabezado principal */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 36px;
+            color: #f1c40f;
         }
     </style>
 </head>
 <body>
-    <h1>Lo mio</h1>
-    <p>
-        En la Ciudad de México, los huertos urbanos han surgido como una solución versátil ante desafíos contemporáneos como el deterioro ambiental y la fragmentación del tejido social. Sin embargo, la carencia de respaldo institucional y una percepción limitada acerca de su auténtico potencial podrían conllevar a que sean considerados únicamente como adornos. Las autoridades, responsables de impulsar dichos espacios, han demostrado resultados inconsistentes. Algunas alcaldías han desarrollado programas sólidos y eficaces, mientras que otras los descuidan, destinando recursos a iniciativas que no favorecen de forma equitativa a las comunidades. Uno de los principales obstáculos se encuentra en la percepción pública acerca de dichos proyectos. Mientras algunos funcionarios los consideran en función de su dimensión ambiental, para gran parte de la ciudadanía representan áreas de recreación y convivencia. La falta de consenso evidencia una visión fragmentada, la cual se muestra incapaz de abarcar todas las posibilidades que los huertos ofrecen. Por otra parte, la creciente popularidad en áreas de nivel socioeconómico medio y alto ha generado críticas debido a su carácter excluyente. Este fenómeno no solo excluye a comunidades vulnerables, sino que también consolida la percepción de que los huertos son un privilegio, en lugar de ser un recurso fundamental para abordar asuntos como la inseguridad alimentaria y la promoción de la sostenibilidad. Alejados de restringirse a una función meramente decorativa, los huertos urbanos poseen el potencial de convertirse en auténticos centros de educación, agricultura productiva y unión comunitaria. No obstante, con el fin de alcanzar dicho objetivo, resulta fundamental superar la indiferencia institucional y elaborar políticas inclusivas que incorporen dichos entornos en las actividades diarias de todas las áreas geográficas, en especial en aquellas que experimentan niveles significativos de insuficiencias alimenticias. La Ciudad de México se encuentra frente a una oportunidad única para transformar sus huertos urbanos en un ejemplo de sostenibilidad y equidad social. Este propósito requiere una reevaluación de su gestión, la asignación de recursos adecuados y la adopción de una perspectiva holística que considere sus diversos beneficios ambientales, sociales y económicos. Los huertos urbanos no deben ser considerados como un privilegio exclusivo de algunos individuos, sino más bien como un derecho colectivo con la capacidad de fomentar la edificación de una ciudad más equitativa, sostenible y solidaria.
-    </p>
-    <a href="index.html">Volver a la página principal</a>
+    <h1>Mi Experiencia</h1>
+    <div class="container">
+        <!-- Primera columna -->
+        <div class="column">
+            <img src="imagen1sd.jpg" alt="Imagen destacada 1">
+            <h2>Impacto Social</h2>
+            <p>
+                Los huertos urbanos son más que espacios verdes; son oportunidades para reconstruir el tejido social y fomentar la sostenibilidad en áreas urbanas. 
+            </p>
+            <a href="impacto_social.html" class="button">Leer Más</a>
+        </div>
+
+        <!-- Segunda columna -->
+        <div class="column">
+            <img src="imagen2sd.jpg" alt="Imagen destacada 2">
+            <h2>Políticas Inclusivas</h2>
+            <p>
+                Es vital que las autoridades adopten una gestión integral para convertir los huertos urbanos en soluciones accesibles y equitativas para todos.
+            </p>
+            <a href="politicas_inclusivas.html" class="button">Leer Más</a>
+        </div>
+    </div>
 </body>
 </html>
