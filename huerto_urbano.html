@@ -38,15 +38,6 @@
             height: auto;
             border-radius: 10px;
         }
-        .upload-section {
-            margin-top: 20px;
-            text-align: left;
-        }
-        .upload-section input[type="file"] {
-            display: block;
-            margin: 10px auto;
-            padding: 10px;
-        }
         table {
             margin: 20px auto;
             border-collapse: collapse;
@@ -61,6 +52,21 @@
         table th {
             background-color: #4CAF50;
             color: white;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
         }
         footer {
             margin-top: 20px;
@@ -78,11 +84,10 @@
             <h2>Diagrama de la Base de Datos</h2>
             <img src="bdhu.jpg" alt="Diagrama de Base de Datos">
         </div>
-        <div class="upload-section">
-            <h2>Subir y Editar Archivo Excel</h2>
-            <input type="file" accept=".xlsx" id="fileUpload">
-            <p><strong>Nota:</strong> Aquí puedes subir y modificar el archivo Excel.</p>
-            <table id="excelTable"></table>
+        <h2>Visualizar y Editar el Archivo Excel</h2>
+        <table id="excelTable"></table>
+        <div class="button-container">
+            <button id="downloadBtn">Descargar Cambios</button>
         </div>
     </div>
     <footer>
@@ -92,37 +97,51 @@
     <!-- Incluyendo la biblioteca SheetJS -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script>
-        const fileUpload = document.getElementById('fileUpload');
         const excelTable = document.getElementById('excelTable');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const excelFileUrl = 'P_P_H_URBANO.xlsx'; // Ruta del archivo en tu repositorio
 
-        fileUpload.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const data = new Uint8Array(e.target.result);
-                    const workbook = XLSX.read(data, { type: 'array' });
-                    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-                    const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
-                    renderTable(jsonData);
-                };
-                reader.readAsArrayBuffer(file);
-            }
-        });
+        // Función para cargar y mostrar el archivo Excel desde el repositorio
+        fetch(excelFileUrl)
+            .then(response => response.arrayBuffer())
+            .then(data => {
+                const workbook = XLSX.read(data, { type: 'array' });
+                const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+                renderTable(jsonData);
+            })
+            .catch(error => console.error('Error al cargar el archivo Excel:', error));
 
+        // Renderizar los datos en la tabla HTML
         function renderTable(data) {
             excelTable.innerHTML = '';
             data.forEach((row, rowIndex) => {
                 const tr = document.createElement('tr');
                 row.forEach((cell) => {
                     const cellElement = rowIndex === 0 ? document.createElement('th') : document.createElement('td');
-                    cellElement.contentEditable = rowIndex !== 0; // Hacemos las celdas editables excepto el encabezado
+                    cellElement.contentEditable = rowIndex !== 0; // Las celdas son editables excepto el encabezado
                     cellElement.textContent = cell || '';
                     tr.appendChild(cellElement);
                 });
                 excelTable.appendChild(tr);
             });
         }
+
+        // Descargar los cambios realizados en el archivo Excel
+        downloadBtn.addEventListener('click', () => {
+            const rows = Array.from(excelTable.querySelectorAll('tr'));
+            const data = rows.map(row => {
+                const cells = Array.from(row.querySelectorAll('th, td'));
+                return cells.map(cell => cell.textContent);
+            });
+
+            const worksheet = XLSX.utils.aoa_to_sheet(data);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, 'Hoja1');
+
+            // Descargar el archivo modificado
+            XLSX.writeFile(workbook, 'P_P_H_URBANO_modificado.xlsx');
+        });
     </script>
 </body>
 </html>
